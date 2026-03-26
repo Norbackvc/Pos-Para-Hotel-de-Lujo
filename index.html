@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POS – Hotel de Lujo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       INICIO SECCIÓN
+  ============================================================ -->
+  <section id="inicio" class="inicio-seccion">
+    <div class="overlay">
+      <div class="inicio-contenido">
+        <div class="logo-area">
+          <span class="logo-icon">🏨</span>
+          <h1 class="hotel-nombre">Hotel de Lujo</h1>
+          <p class="hotel-subtitulo">Sistema de Punto de Venta</p>
+        </div>
+
+        <div class="login-card">
+          <h2>Iniciar Sesión</h2>
+
+          <div class="form-group">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" placeholder="Ingrese su usuario" autocomplete="username" />
+          </div>
+
+          <div class="form-group">
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" placeholder="Ingrese su contraseña" autocomplete="current-password" />
+          </div>
+
+          <p id="error-msg" class="error-msg" role="alert" aria-live="polite"></p>
+
+          <button id="btn-ingresar" class="btn-primario">
+            Ingresar
+          </button>
+        </div>
+
+        <p class="version">v1.0.0</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PANEL PRINCIPAL (visible después del login)
+  ============================================================ -->
+  <section id="panel" class="panel-seccion oculto">
+    <header class="panel-header">
+      <div class="header-izquierda">
+        <span class="logo-icon-sm">🏨</span>
+        <span class="panel-titulo">Hotel de Lujo – POS</span>
+      </div>
+      <div class="header-derecha">
+        <span id="nombre-usuario" class="nombre-usuario"></span>
+        <button class="btn-cerrar-sesion" id="btn-cerrar-sesion">Cerrar Sesión</button>
+      </div>
+    </header>
+
+    <main class="panel-main">
+      <h2 class="bienvenida">Bienvenido al Panel Principal</h2>
+      <div class="tarjetas-menu">
+        <div class="tarjeta">
+          <span class="tarjeta-icono">🍽️</span>
+          <span class="tarjeta-texto">Restaurante</span>
+        </div>
+        <div class="tarjeta">
+          <span class="tarjeta-icono">🛏️</span>
+          <span class="tarjeta-texto">Habitaciones</span>
+        </div>
+        <div class="tarjeta">
+          <span class="tarjeta-icono">🍸</span>
+          <span class="tarjeta-texto">Bar</span>
+        </div>
+        <div class="tarjeta">
+          <span class="tarjeta-icono">💆</span>
+          <span class="tarjeta-texto">Spa</span>
+        </div>
+        <div class="tarjeta">
+          <span class="tarjeta-icono">📋</span>
+          <span class="tarjeta-texto">Reportes</span>
+        </div>
+        <div class="tarjeta">
+          <span class="tarjeta-icono">⚙️</span>
+          <span class="tarjeta-texto">Configuración</span>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
