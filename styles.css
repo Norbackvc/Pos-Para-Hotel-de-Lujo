@@ -1,0 +1,324 @@
+/* ============================================================
+   VARIABLES Y RESET
+============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dorado: #c9a84c;
+  --dorado-claro: #f0d080;
+  --oscuro: #1a1a2e;
+  --oscuro-medio: #16213e;
+  --oscuro-claro: #0f3460;
+  --texto-claro: #f0f0f0;
+  --texto-gris: #a0a0b0;
+  --error: #e74c3c;
+  --sombra: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --radio: 12px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--oscuro);
+  color: var(--texto-claro);
+  min-height: 100vh;
+}
+
+/* ============================================================
+   INICIO SECCIÓN
+============================================================ */
+.inicio-seccion {
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, var(--oscuro) 0%, var(--oscuro-medio) 50%, var(--oscuro-claro) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: radial-gradient(ellipse at center, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+}
+
+.inicio-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Logo */
+.logo-area {
+  text-align: center;
+}
+
+.logo-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 12px rgba(201, 168, 76, 0.6));
+}
+
+.hotel-nombre {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dorado);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(201, 168, 76, 0.4);
+}
+
+.hotel-subtitulo {
+  font-size: 0.95rem;
+  color: var(--texto-gris);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+/* Login Card */
+.login-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: var(--radio);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--sombra);
+}
+
+.login-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dorado-claro);
+  text-align: center;
+  margin-bottom: 1.75rem;
+  letter-spacing: 1px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: var(--texto-gris);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--texto-claro);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  border-color: var(--dorado);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+.form-group input::placeholder {
+  color: rgba(160, 160, 176, 0.5);
+}
+
+/* Error message */
+.error-msg {
+  font-size: 0.85rem;
+  color: var(--error);
+  text-align: center;
+  min-height: 1.2em;
+  margin-bottom: 0.5rem;
+}
+
+/* Botón principal */
+.btn-primario {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, var(--dorado) 0%, var(--dorado-claro) 100%);
+  color: var(--oscuro);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 0.5rem;
+}
+
+.btn-primario:hover {
+  opacity: 0.9;
+}
+
+.btn-primario:active {
+  transform: scale(0.98);
+}
+
+/* Versión */
+.version {
+  font-size: 0.75rem;
+  color: rgba(160, 160, 176, 0.4);
+  letter-spacing: 1px;
+}
+
+/* ============================================================
+   PANEL PRINCIPAL
+============================================================ */
+.panel-seccion {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--oscuro);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--oscuro-medio);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.header-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon-sm {
+  font-size: 1.5rem;
+}
+
+.panel-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dorado);
+  letter-spacing: 1px;
+}
+
+.header-derecha {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nombre-usuario {
+  font-size: 0.9rem;
+  color: var(--texto-gris);
+}
+
+.btn-cerrar-sesion {
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  color: var(--dorado);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cerrar-sesion:hover {
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.panel-main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+}
+
+.bienvenida {
+  font-size: 1.4rem;
+  color: var(--dorado-claro);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Tarjetas de menú */
+.tarjetas-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.25rem;
+}
+
+.tarjeta {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radio);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.tarjeta:hover {
+  background: rgba(201, 168, 76, 0.08);
+  border-color: rgba(201, 168, 76, 0.5);
+  transform: translateY(-3px);
+}
+
+.tarjeta-icono {
+  font-size: 2.5rem;
+}
+
+.tarjeta-texto {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--texto-claro);
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* ============================================================
+   UTILIDADES
+============================================================ */
+.oculto {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .inicio-contenido {
+    gap: 1.5rem;
+  }
+
+  .hotel-nombre {
+    font-size: 1.5rem;
+  }
+
+  .login-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
