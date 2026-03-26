@@ -1,0 +1,23 @@
+# Base de datos generada automáticamente
+hotel_pos.db
+
+# Cache de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Entornos virtuales
+venv/
+env/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
